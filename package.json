@@ -1,7 +1,7 @@
 {
   "name": "bitmap_converter",
   "version": "0.1.0",
-  "description": "bitmap converter",
+  "description": "Randomly changes bitmap color whilst maintaining composition.",
   "main": "converter.js",
   "dependencies": {
     "chai": "^3.4.0",
