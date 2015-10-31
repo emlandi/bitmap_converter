@@ -1,17 +1,15 @@
 var fs = require('fs');
 var bitmap = fs.readFileSync('bitmap1.bmp');
 
-var bitmapType = bitmap.toString('utf-8', 0, 2);
-var size = bitmap.readUInt32LE(2);
-var pixel_data_start = bitmap.readUInt32LE(10);
-var bit_depth = bitmap.readUInt16LE(28);
-var number_of_colors = bitmap.readUInt32LE(46);
-var bit_height = bitmap.readUInt16LE(22);
-var bit_width = bitmap.readUInt16LE(18);
-var header_size = bitmap.readUInt16LE(14);
+// var bitmapType = bitmap.toString('utf-8', 0, 2);
+// var size = bitmap.readUInt32LE(2);
+// var pixel_data_start = bitmap.readUInt32LE(10);
+// var bit_depth = bitmap.readUInt16LE(28);
+// var number_of_colors = bitmap.readUInt32LE(46);
+// var bit_height = bitmap.readUInt16LE(22);
+// var bit_width = bitmap.readUInt16LE(18);
+// var header_size = bitmap.readUInt16LE(14);
 var palette_size = bitmap.slice(54, 1078);
-
-console.log(bitmap);
 
 // create new palette by taking original palette and applying math.random
 var new_palette = [];
@@ -24,17 +22,15 @@ function createPalette(palette) {
 };
 
 createPalette(new_palette);
-console.log("new palette: " + new_palette);
 
-//convert values back to hex. convert_palette now holds the values of the new palette in hex.
+//convert values back to hex.
 var convert_palette = new Buffer(new_palette);
 convert_palette.writeUInt16LE(new_palette);
 
 // need to apply convert_palette to bitmap.
 Array.prototype.forEach.call(new_palette, function(byte, index){
-  palette_size.writeUInt8(createPalette(new_palette), index);
+  palette_size.writeUInt8(byte, index);
 });
 
-// transformPalette();
 //write to new file
 fs.writeFileSync('bitmap2.bmp', bitmap);
