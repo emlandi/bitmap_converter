@@ -2,17 +2,12 @@
   "name": "bitmap_converter",
   "version": "0.1.0",
   "description": "Randomly changes bitmap color whilst maintaining composition.",
-  "main": "converter.js",
-  "dependencies": {
-  },
-  "devDependencies": {
-    "chai": "^3.4.0",
-    "gulp-jshint": "^1.12.0",
-    "gulp-mocha": "^2.1.3",
-    "mocha": "^2.3.3"
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
     "type": "git",
@@ -23,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/JackSSS/bitmap_converter/issues"
   },
-  "homepage": "https://github.com/JackSSS/bitmap_converter#readme"
+  "homepage": "https://github.com/JackSSS/bitmap_converter#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "chai": "^3.4.0",
+    "gulp-jshint": "^1.12.0",
+    "gulp-mocha": "^2.1.3",
+    "mocha": "^2.3.3"
+  }
 }
