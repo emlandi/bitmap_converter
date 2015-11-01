@@ -3,8 +3,16 @@
   "version": "0.1.0",
   "description": "Randomly changes bitmap color whilst maintaining composition.",
   "main": "converter.js",
+<<<<<<< HEAD
   // "dependencies": {
   // },
+=======
+<<<<<<< HEAD
+=======
+  "dependencies": {
+  },
+>>>>>>> 256177dd923c6f54e3b42df64744299e9a66161f
+>>>>>>> 2b3aca80481d7e8a92662a98da7b634da5cfaf41
   "devDependencies": {
     "chai": "^3.4.0",
     "gulp-jshint": "^1.12.0",
