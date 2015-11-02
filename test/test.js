@@ -1,29 +1,25 @@
-var expect = require('mocha').expect;
+var expect = require('chai').expect;
 var converter = require(__dirname + '/../lib/converter');
 
+var convert = {};
 
 //this passes
-describe('test', function() {
-  it('should print test', function(){
-    console.log('test');
-  });
-});
-
-//this is pending
-describe('pending', function(){
-  it('should be pending');
-});
-
-//this fails RefError: bitmapType is undefined
 describe('the bitmapType', function() {
+  before(function() {
+    convert = converter();
+  });
   it('should equal BM', function(){
-    expect(bitmapType).to.eql("BM");
+    expect(convert.bitmapType).to.eql("BM");
   });
 });
 
 //this fails RefError: createPalette(new_palette) & convert_palette are not defined.
 describe('the colors', function() {
+  before(function() {
+    convert = converter();
+    console.log(convert);
+  });
   it('should change', function(){
-    expect(createPalette(new_palette)).to.not.eql(convert_palette);
+    expect(convert.new_palette).to.not.eql(convert.convert_palette);
   });
 });
