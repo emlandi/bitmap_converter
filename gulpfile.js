@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var mocha = require('gulp-mocha');
 var appFiles = ['index.js', 'lib/*.js'];
-var testFiles = ['/test/**/*.js'];
+var testFiles = ['./test/test.js'];
 
 gulp.task('jshint:test', function() {
   return gulp.src(testFiles)
@@ -27,7 +27,7 @@ gulp.task('jshint:app', function() {
 });
 
 gulp.task('mocha', function () {
-    return gulp.src(testFiles)
+    return gulp.src(testFiles, {read: false})
       .pipe(mocha({reporter: 'landing'}));
 });
 
