@@ -13,13 +13,12 @@ describe('the bitmapType', function() {
   });
 });
 
-//this fails RefError: createPalette(new_palette) & convert_palette are not defined.
+//this fails, RefError convert_palette is not defined
 describe('the colors', function() {
   before(function() {
     convert = converter();
-    console.log(convert);
   });
   it('should change', function(){
-    expect(convert.new_palette).to.not.eql(convert.convert_palette);
+    expect(convert.palette_size).to.not.eql(convert_palette);
   });
 });
